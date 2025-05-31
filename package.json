@@ -4,8 +4,8 @@
   "description": "newral network",
   "main": "index.js",
   "scripts": {
-    "build": "tsc && npm run copy-html && copy-brains",
-    "dev": "tsc --watch && npm run copy-html && copy-brains",
+    "build": "tsc && npm run copy-html && npm run copy-brains",
+    "dev": "tsc --watch && npm run copy-html && npm run copy-brains",
     "copy-html": "copyfiles -u 1 src/index.html dist",
     "copy-brains": "copyfiles -u 2 src/brains/**/* dist",
     "test": "echo \"Error: no test specified\" && exit 1"
