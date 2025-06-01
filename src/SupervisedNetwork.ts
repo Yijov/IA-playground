@@ -1,4 +1,4 @@
-export class NeuralNetwork {
+export class SupervisedNetwork {
   layers: number[];
   weights: number[][][];
   biases: number[][];
@@ -143,12 +143,12 @@ export class NeuralNetwork {
     localStorage.setItem(key, JSON.stringify(model));
   }
 
-  static load(key: string = "neural-network"): NeuralNetwork | null {
+  static load(key: string = "neural-network"): SupervisedNetwork | null {
     const modelStr = localStorage.getItem(key);
     if (!modelStr) return null;
 
     const model = JSON.parse(modelStr);
-    const nn = new NeuralNetwork(model.layers);
+    const nn = new SupervisedNetwork(model.layers);
     nn.weights = model.weights;
     nn.biases = model.biases;
     return nn;

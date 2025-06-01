@@ -1,5 +1,5 @@
 import { getRandomInt } from "./helpers.js";
-import { NeuralNetwork } from "./NewralNetwork.js";
+import { SupervisedNetwork } from "./SupervisedNetwork.js";
 
 
 let number: number;
@@ -11,7 +11,7 @@ const evalButton = document.getElementById("eval");
 const saveButton = document.getElementById("save");
 const loadButton = document.getElementById("load");
 updateNumber();
-const nn = new NeuralNetwork([4, 10, 10, 2]); // 2 inputs, 4 hidden neurons, 1 output
+const nn = new SupervisedNetwork([4, 10, 10, 2]); // 2 inputs, 4 hidden neurons, 1 output
 
 
 trainButton?.addEventListener("click", () => {
@@ -71,7 +71,7 @@ saveButton?.addEventListener("click", () => {
 });
 
 loadButton?.addEventListener("click", () => {
- const brain= NeuralNetwork.load();;
+ const brain= SupervisedNetwork.load();;
  if(!brain) return null
  nn.biases=brain?.biases
  nn.layers=brain?.layers
